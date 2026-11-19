@@ -10,3 +10,21 @@ A one-page personal site for a freelance wedding and portrait photographer: hero
 ## To personalise
 
 Replace the bracketed text in `index.html`: `[Her Name]`, `[city]`, the about-section line, and `[hello@yourname.com]` (also update the `mailto:` link).
+
+## Deploy to Vercel
+
+This is a static site with no build step, so Vercel needs no framework settings.
+
+1. In Vercel, choose **Add New → Project** and import this repository.
+2. Leave the framework preset as **Other**, and leave the build command and output directory empty. The site is served from the repository root.
+3. Click **Deploy**. Every push to `main` redeploys automatically.
+
+Or from the command line:
+
+```
+npm i -g vercel
+vercel        # preview deploy
+vercel --prod # production deploy
+```
+
+`vercel.json` adds long-lived caching for `/images` and a couple of basic security headers.
